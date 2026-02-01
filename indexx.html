@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine?</title>
+<style>
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #ffe4ec;
+    padding-top: 80px;
+  }
+  button {
+    font-size: 24px;
+    padding: 15px 30px;
+    margin: 20px;
+    cursor: pointer;
+  }
+  #noBtn {
+    position: relative;
+  }
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yesBtn">YES</button>
+<button id="noBtn">NO</button>
+
+<div id="result"></div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+  let moves = 0;
+
+  noBtn.addEventListener("mouseover", () => {
+    if (moves < 20) {
+      const x = Math.random() * 300 - 150;
+      const y = Math.random() * 150 - 75;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      moves++;
+    }
+  });
+
+  document.getElementById("yesBtn").addEventListener("click", () => {
+    document.body.innerHTML = `
+      <h1>YAY!!! 💕</h1>
+      <img src="https://https://photos.app.goo.gl/BVbraWUrY2LLeS5R6" width="400">
+    `;
+  });
+</script>
+
+</body>
+</html>
